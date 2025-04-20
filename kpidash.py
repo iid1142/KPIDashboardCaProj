@@ -62,6 +62,23 @@ else:
     DB_NAME = st.secrets["DB_NAME"]
     DB_USER = st.secrets["DB_USER"]
     DB_PASSWORD = st.secrets["DB_PASSWORD"]
+    TABLE_NAME = st.secrets["TABLE_NAME"]
+    ORDER_DATE_COL = st.secrets["ORDER_DATE_COL"]
+    PRODUCT_LINE_COL = st.secrets["PRODUCT_LINE_COL"]
+    SALES_COL = st.secrets["SALES_COL"]
+    ORDER_NUMBER_COL = st.secrets["ORDER_NUMBER_COL"]
+    CUSTOMER_NAME_COL = st.secrets["CUSTOMER_NAME_COL"]
+    TERRITORY_COL = st.secrets["TERRITORY_COL"]
+    COUNTRY_COL = st.secrets["COUNTRY_COL"]
+    STATE_COL = st.secrets["STATE_COL"]
+    CITY_COL = st.secrets["CITY_COL"]
+    STATUS_COL = st.secrets["STATUS_COL"]
+    DEAL_SIZE_COL = st.secrets["DEAL_SIZE_COL"]
+    PRODUCT_CODE_COL = st.secrets["PRODUCT_CODE_COL"]
+    QUANTITY_ORDERED_COL = st.secrets["QUANTITY_ORDERED_COL"]
+    PRICE_EACH_COL = st.secrets["PRICE_EACH_COL"]
+    MSRP_COL = st.secrets["MSRP_COL"]
+    ORDER_LINE_NUMBER_COL = st.secrets["ORDER_LINE_NUMBER_COL"]
 
 # --- User Authentication ---
 # (Keep your authentication code as is)
