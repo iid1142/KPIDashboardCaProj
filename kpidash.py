@@ -63,27 +63,6 @@ else:
     DB_USER = st.secrets["DB_USER"]
     DB_PASSWORD = st.secrets["DB_PASSWORD"]
 
-    # You can also store table and column names in Streamlit Secrets if you prefer
-    # For simplicity, I'll keep them here in the code, but consider moving
-    # them to secrets if they are sensitive or environment-specific.
-    TABLE_NAME = "statable" 
-    ORDER_DATE_COL = "orderdate"
-    PRODUCT_LINE_COL = "productline"
-    SALES_COL = "sales"
-    ORDER_NUMBER_COL = "ordernumber"
-    CUSTOMER_NAME_COL = "customername"
-    TERRITORY_COL = "territory"
-    COUNTRY_COL = "country"
-    STATE_COL = "state"
-    CITY_COL = "city"
-    STATUS_COL = "status"
-    DEAL_SIZE_COL = "dealsize"
-    PRODUCT_CODE_COL = "productcode"
-    QUANTITY_ORDERED_COL = "quantityordered"
-    PRICE_EACH_COL = "priceeach"
-    MSRP_COL = "msrp"
-    ORDER_LINE_NUMBER_COL = "orderlinenumber"
-
 # --- User Authentication ---
 # (Keep your authentication code as is)
 USERS = {
