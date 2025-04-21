@@ -54,6 +54,7 @@ if not st.secrets:  # Check if Streamlit Secrets is empty (likely running locall
     PRICE_EACH_COL = config['columns']['price_each']
     MSRP_COL = config['columns']['msrp']
     ORDER_LINE_NUMBER_COL = config['columns']['order_line_number']
+    print("Local")
 else:
     print("Running in Streamlit Cloud - using secrets.")
     # Database connection parameters from Streamlit Secrets
@@ -79,7 +80,7 @@ else:
     PRICE_EACH_COL = st.secrets["PRICE_EACH_COL"]
     MSRP_COL = st.secrets["MSRP_COL"]
     ORDER_LINE_NUMBER_COL = st.secrets["ORDER_LINE_NUMBER_COL"]
-
+    print("Streamlit")
 # --- User Authentication ---
 # (Keep your authentication code as is)
 USERS = {
