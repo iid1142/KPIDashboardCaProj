@@ -80,7 +80,7 @@ else:
     PRICE_EACH_COL = st.secrets["PRICE_EACH_COL"]
     MSRP_COL = st.secrets["MSRP_COL"]
     ORDER_LINE_NUMBER_COL = st.secrets["ORDER_LINE_NUMBER_COL"]
-    print("Streamlit")
+    print(TABLE_NAME)
 # --- User Authentication ---
 # (Keep your authentication code as is)
 USERS = {
