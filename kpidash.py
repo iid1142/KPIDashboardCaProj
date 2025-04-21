@@ -28,7 +28,7 @@ import streamlit.components.v1 as components
 config = configparser.ConfigParser()
 if not st.secrets:  # Check if Streamlit Secrets is empty (likely running locally)
     config.read('KPIDashboardCaProj/config.ini')
-    print(f"Config object (local): {config.sections()}")
+    os.write(f"Config object (local): {config.sections()}")
     # Database connection parameters from config (for local development)
     DB_HOST = os.environ.get('DB_HOST', config['database']['host'])
     DB_PORT = os.environ.get('DB_PORT', config['database']['port'])
@@ -54,9 +54,9 @@ if not st.secrets:  # Check if Streamlit Secrets is empty (likely running locall
     PRICE_EACH_COL = config['columns']['price_each']
     MSRP_COL = config['columns']['msrp']
     ORDER_LINE_NUMBER_COL = config['columns']['order_line_number']
-    print("Local")
+    os.write("Local")
 else:
-    print("Running in Streamlit Cloud - using secrets.")
+    os.write("Running in Streamlit Cloud - using secrets.")
     # Database connection parameters from Streamlit Secrets
     DB_HOST = st.secrets["DB_HOST"]
     DB_PORT = st.secrets["DB_PORT"]
@@ -80,7 +80,7 @@ else:
     PRICE_EACH_COL = st.secrets["PRICE_EACH_COL"]
     MSRP_COL = st.secrets["MSRP_COL"]
     ORDER_LINE_NUMBER_COL = st.secrets["ORDER_LINE_NUMBER_COL"]
-    print("Streamlit")
+    os.write("Streamlit")
 # --- User Authentication ---
 # (Keep your authentication code as is)
 USERS = {
