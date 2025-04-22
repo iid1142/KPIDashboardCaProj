@@ -335,7 +335,7 @@ def segment_customers(rfm: pd.DataFrame):
     Returns:
         pd.DataFrame: The DataFrame with customer segments added.
     """
-    st.subheader("Customer Segmentation (RFM)")
+    st.subheader("Customer Segmentation (RFM)", help="Divides customers using RFM(recency, frequency, and monetary value)")
     quantiles = rfm.quantile(q=[0.25, 0.5, 0.75])
 
     def r_score(x, p, d):  # recency, column name, column values
@@ -616,7 +616,7 @@ def display_charts_cust(data: pd.DataFrame):
 
     colcust1, colcust2 = st.columns(2)
     with colcust1:
-        st.subheader("Initial Approximation Customer Lifetime Value")
+        st.subheader("Initial Approximation Customer Lifetime Value", help="Average revenue per customer over a period of time")
         customer_avg_order_value = data.groupby(CUSTOMER_NAME_COL)[SALES_COL].mean().reset_index()  # Calculate Average Order Value per Customer
         customer_avg_order_value.rename(columns={SALES_COL: 'Average Order Value'}, inplace=True)
         customer_order_counts = data.groupby(CUSTOMER_NAME_COL)[ORDER_NUMBER_COL].nunique().reset_index()  # Calculate Order Frequency per Customer (assuming you have order dates)
@@ -680,7 +680,7 @@ def display_charts_ord(data: pd.DataFrame):
 
     colord1, colord2 = st.columns(2)
     with colord1:
-        st.subheader('Price Realization vs MSRP')  # Display Price Realization vs MSRP
+        st.subheader('Price Realization vs MSRP', help="Amount of money a company actually makes from selling products compared to what they expected vs Manufacturer's Suggested Retail Price")  # Display Price Realization vs MSRP
         fig_price_vs_msrp = px.scatter(data, x=PRICE_EACH_COL, y=MSRP_COL)
         st.plotly_chart(fig_price_vs_msrp, key="price")
     with colord2:
